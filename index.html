@@ -589,66 +589,15 @@
             filter: brightness(1.05) contrast(1.08);
         }
 
-        /* Styling untuk container video */
         .video-thumb {
             position: relative;
             width: 100%;
             height: 100%;
+            background: #0a2f3f;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
-        }
-
-        /* Styling untuk container bingkai video */
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 auto;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Styling untuk bingkai video */
-        .video-border {
-            padding: 8px;
-            border: 2px solid #ccc;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #fff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        /* Efek hover untuk bingkai */
-        .thumbnail-card:hover .video-border {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Thumbnail video preview */
-        .video-preview {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #0a2f3f;
-        }
-
-        .video-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .play-overlay {
@@ -665,7 +614,6 @@
             opacity: 0.9;
             transition: all 0.3s ease;
             z-index: 2;
-            pointer-events: none;
         }
 
         .play-overlay i {
@@ -683,29 +631,6 @@
         .thumbnail-card:hover .play-overlay i {
             transform: scale(1.2);
             color: #ffecb3;
-        }
-
-        /* Styling untuk teks label video */
-        .video-title {
-            text-align: center;
-            font-weight: 600;
-            margin-top: 10px;
-            padding: 5px 10px;
-            border: 2px solid #007BFF;
-            border-radius: 10px;
-            display: inline-block;
-            background-color: #f0f8ff;
-            color: #007BFF;
-            font-size: 12px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            width: auto;
-            cursor: pointer;
-        }
-
-        /* Efek hover untuk teks label */
-        .video-title:hover {
-            background-color: #007BFF;
-            color: #fff;
         }
 
         .card-info {
@@ -850,12 +775,15 @@
 
         .gallery-media-container {
             position: relative;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: #0f2c3c;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(255, 235, 170, 0.6);
+            padding: 20px;
         }
 
         .close-gallery-modal {
@@ -896,20 +824,82 @@
             border-radius: 0;
         }
 
-        .modal-video-container {
-            width: 80vw;
-            height: 45vw;
-            max-height: 70vh;
-            background: black;
+        /* Styling untuk container video modal */
+        .modal-video-wrapper {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .modal-video-container iframe {
+        .video-container-modal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px auto;
             width: 100%;
-            height: 100%;
+            max-width: 400px;
+        }
+
+        .video-border-modal {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .video-border-modal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-title-modal {
+            text-align: center;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #f0f8ff;
+            color: #007BFF;
+            font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .video-title-modal:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .tombol-tandai {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
             border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tombol-tandai:hover {
+            background-color: #0056b3;
+        }
+
+        .video-footer-text {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
         }
 
         .modal-caption {
@@ -1447,6 +1437,10 @@
                 top: 12px;
                 right: 12px;
             }
+            
+            .video-container-modal {
+                max-width: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1587,10 +1581,13 @@
                 right: 10px;
             }
             
-            .video-title {
-                font-size: 10px;
-                padding: 3px 8px;
-                margin-top: 6px;
+            .video-container-modal {
+                max-width: 250px;
+            }
+            
+            .tombol-tandai {
+                padding: 8px 16px;
+                font-size: 14px;
             }
         }
     </style>
@@ -1756,7 +1753,7 @@
                     <tr><td>Kewarganegaraan</td><td>: Indonesia</td></tr>
                     <tr><td>Agama</td><td>: Islam</td></tr>
                     <tr><td>Golongan Darah</td><td>: 0</td></tr>
-                </table>
+                 </table>
             </div>
         </div>
     </div>
@@ -1849,7 +1846,6 @@
         <div class="gallery-modal-content">
             <div class="gallery-media-container" id="galleryMediaContainer">
                 <div id="galleryModalMedia"></div>
-                <div class="modal-caption" id="galleryModalCaption"></div>
             </div>
         </div>
     </div>
@@ -1924,21 +1920,20 @@
             { title: "Sawah Terasering", desc: "Keindahan hijau", src: "https://picsum.photos/id/30/600/600", hdSrc: "https://picsum.photos/id/30/1200/1200", badge: "Pedesaan" }
         ];
 
-        // Data Video menggunakan YouTube Embed (stabil dan berfungsi dengan baik)
+        // Data Video dengan contentid yang berbeda untuk setiap video
         const videoItems = [
-            { title: "Video 01", desc: "Video 3D Animasi Fridzi", videoId: "fVwG7Z_fgzU", badge: "Video", thumbnail: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEF-o7tNHnnNRbAon-hQQ3PDwRw3swMRwdplSvWxWDyIF0RcgFxgRUn-94vwamT0zrOGVi1AJF1dQzzi3grV_3bWW5J2te3jOJeg59EF87q3N3fI91VnEss82iHU9HnPRKtxVMmtc_CRQiKtXPNYCWzdpMfoeuJ9dQ82aXofvEm8Q91k29t93PUG0A_Zk/s320/1000699220.png" },
-            { title: "Video 02", desc: "Video Menarik 2", videoId: "9bZkp7q19f0", badge: "Video", thumbnail: "https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" },
-            { title: "Video 03", desc: "Video Menarik 3", videoId: "JGwWNGJdvx8", badge: "Video", thumbnail: "https://img.youtube.com/vi/JGwWNGJdvx8/hqdefault.jpg" },
-            { title: "Video 04", desc: "Video Menarik 4", videoId: "tgbNymZ7vqY", badge: "Video", thumbnail: "https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" },
-            { title: "Video 05", desc: "Video Menarik 5", videoId: "kXYiU_JCYtU", badge: "Video", thumbnail: "https://img.youtube.com/vi/kXYiU_JCYtU/hqdefault.jpg" },
-            { title: "Video 06", desc: "Video Menarik 6", videoId: "XqZsoesa55w", badge: "Video", thumbnail: "https://img.youtube.com/vi/XqZsoesa55w/hqdefault.jpg" }
+            { title: "Video 01", desc: "Fridzi 3D Animasi", contentid: "fVwG7Z_fgzU", badge: "Video" },
+            { title: "Video 02", desc: "Konten menarik 2", contentid: "7967789b2c4a5260", badge: "Video" },
+            { title: "Video 03", desc: "Konten menarik 3", contentid: "a1b2c3d4e5f67890", badge: "Video" },
+            { title: "Video 04", desc: "Konten menarik 4", contentid: "1234567890abcdef", badge: "Video" },
+            { title: "Video 05", desc: "Konten menarik 5", contentid: "fedcba0987654321", badge: "Video" },
+            { title: "Video 06", desc: "Konten menarik 6", contentid: "00c74b660d2e773f", badge: "Video" }
         ];
 
         const photoGrid = document.getElementById('photoGrid');
         const videoGrid = document.getElementById('videoGrid');
         const galleryModal = document.getElementById('galleryModal');
         const galleryModalMedia = document.getElementById('galleryModalMedia');
-        const galleryModalCaption = document.getElementById('galleryModalCaption');
         const galleryMediaContainer = document.getElementById('galleryMediaContainer');
 
         // Fungsi membuat tombol close
@@ -1983,7 +1978,6 @@
             
             card.addEventListener('click', () => {
                 galleryModalMedia.innerHTML = `<img src="${item.hdSrc}" class="modal-media" style="max-width:100%; max-height:70vh;">`;
-                galleryModalCaption.innerText = `📷 ${item.title} — ${item.desc}`;
                 galleryModal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
                 addCloseButtonToContainer();
@@ -1992,7 +1986,7 @@
             return card;
         }
 
-        // Fungsi membuat kartu video dengan YouTube Embed
+        // Fungsi membuat kartu video dengan format yang diminta
         function createVideoCard(item) {
             const card = document.createElement('div');
             card.className = 'thumbnail-card';
@@ -2003,7 +1997,7 @@
             const videoDiv = document.createElement('div');
             videoDiv.className = 'video-thumb';
             
-            // Membuat struktur video dengan border dan thumbnail
+            // Membuat struktur thumbnail video (sederhana untuk preview)
             const videoContainer = document.createElement('div');
             videoContainer.className = 'video-container';
             videoContainer.style.width = '100%';
@@ -2013,32 +2007,35 @@
             videoBorder.className = 'video-border';
             videoBorder.style.width = '100%';
             videoBorder.style.height = '100%';
-            videoBorder.style.overflow = 'hidden';
+            videoBorder.style.padding = '5px';
+            videoBorder.style.border = '2px solid #ccc';
+            videoBorder.style.borderRadius = '10px';
+            videoBorder.style.backgroundColor = '#fff';
             
-            // Thumbnail image dari YouTube
-            const previewDiv = document.createElement('div');
-            previewDiv.className = 'video-preview';
-            previewDiv.style.width = '100%';
-            previewDiv.style.height = '100%';
-            previewDiv.style.backgroundImage = `url(${item.thumbnail})`;
-            previewDiv.style.backgroundSize = 'cover';
-            previewDiv.style.backgroundPosition = 'center';
+            const separator = document.createElement('div');
+            separator.className = 'separator';
+            separator.style.cssText = 'clear: both; text-align: center; width: 100%; height: 100%;';
             
-            videoBorder.appendChild(previewDiv);
+            const objectTag = document.createElement('object');
+            objectTag.className = 'BLOG_video_class';
+            objectTag.setAttribute('contentid', item.contentid);
+            objectTag.setAttribute('height', '200');
+            objectTag.setAttribute('width', '320');
+            objectTag.setAttribute('id', `BLOG_video-${item.contentid}`);
+            objectTag.style.width = '100%';
+            objectTag.style.height = '100%';
+            objectTag.style.objectFit = 'cover';
+            
+            separator.appendChild(objectTag);
+            videoBorder.appendChild(separator);
             videoContainer.appendChild(videoBorder);
             videoDiv.appendChild(videoContainer);
-            
-            // Tambahkan teks label video
-            const videoTitle = document.createElement('div');
-            videoTitle.className = 'video-title';
-            videoTitle.innerText = item.title;
             
             const overlay = document.createElement('div');
             overlay.className = 'play-overlay';
             overlay.innerHTML = '<i class="fas fa-play-circle"></i>';
             videoDiv.appendChild(overlay);
             mediaWrapper.appendChild(videoDiv);
-            mediaWrapper.appendChild(videoTitle);
             
             const infoDiv = document.createElement('div');
             infoDiv.className = 'card-info';
@@ -2051,21 +2048,36 @@
             card.appendChild(infoDiv);
             
             card.addEventListener('click', () => {
-                // Membuat tampilan modal dengan YouTube embed
-                galleryModalMedia.innerHTML = `
-                    <div class="modal-video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/${item.videoId}?autoplay=1&controls=1&rel=0&modestbranding=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                // Membuat tampilan modal dengan struktur lengkap sesuai permintaan
+                const modalContent = `
+                    <div class="modal-video-wrapper">
+                        <div class="video-container-modal">
+                            <div class="video-border-modal">
+                                <div class="separator" style="clear: both; text-align: center;">
+                                    <object class="BLOG_video_class" contentid="${item.contentid}" height="200" id="BLOG_video-${item.contentid}" width="320" style="width:100%; height:100%; object-fit:contain;"></object>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button id="tombolTandai" class="tombol-tandai" onclick="ubahTeks()">Tandai Selesai</button>
+                        </div>
+                        <p style="font-size: 14px; text-align: center; margin-top: 10px; color: #fff;">Video Fridzi</p>
                     </div>
                 `;
-                galleryModalCaption.innerText = `🎬 ${item.title} — ${item.desc}`;
+                galleryModalMedia.innerHTML = modalContent;
                 galleryModal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
                 addCloseButtonToContainer();
+                
+                // Menambahkan fungsi ubahTeks ke window agar bisa diakses dari onclick
+                window.ubahTeks = function() {
+                    const tombol = document.getElementById('tombolTandai');
+                    if (tombol && tombol.textContent === 'Tandai Selesai') {
+                        tombol.textContent = 'Tandai Sudah Selesai';
+                    } else if (tombol) {
+                        tombol.textContent = 'Tandai Selesai';
+                    }
+                };
             });
             
             return card;
