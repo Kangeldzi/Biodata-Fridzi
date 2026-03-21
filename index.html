@@ -598,6 +598,15 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .video-thumb iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            border: none;
         }
 
         .play-overlay {
@@ -824,56 +833,35 @@
             border-radius: 0;
         }
 
-        /* Styling untuk container video modal */
-        .modal-video-wrapper {
+        /* Styling untuk modal video YouTube */
+        .modal-youtube-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 800px;
         }
 
-        .video-container-modal {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px auto;
+        .youtube-video-container {
             width: 100%;
-            max-width: 400px;
+            background: black;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
-        .video-border-modal {
-            padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #fff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .youtube-video-container iframe {
             width: 100%;
+            height: 450px;
+            display: block;
+            border: none;
         }
 
-        .video-border-modal:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .video-title-modal {
+        .video-info {
+            padding: 12px;
+            background: #0f2c3c;
+            color: white;
             text-align: center;
-            font-weight: 600;
-            margin-top: 10px;
-            padding: 5px 10px;
-            border: 2px solid #007BFF;
-            border-radius: 10px;
-            display: inline-block;
-            background-color: #f0f8ff;
-            color: #007BFF;
-            font-size: 14px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .video-title-modal:hover {
-            background-color: #007BFF;
-            color: #fff;
+            font-weight: 500;
         }
 
         .tombol-tandai {
@@ -900,21 +888,6 @@
             text-align: center;
             margin-top: 10px;
             color: #fff;
-        }
-
-        .modal-caption {
-            padding: 12px 20px;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            color: #f9efcf;
-            font-weight: 500;
-            border-radius: 0 0 12px 12px;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
         }
 
         /* Social Media Section */
@@ -1438,8 +1411,8 @@
                 right: 12px;
             }
             
-            .video-container-modal {
-                max-width: 300px;
+            .youtube-video-container iframe {
+                height: 350px;
             }
         }
 
@@ -1581,8 +1554,8 @@
                 right: 10px;
             }
             
-            .video-container-modal {
-                max-width: 250px;
+            .youtube-video-container iframe {
+                height: 250px;
             }
             
             .tombol-tandai {
@@ -1696,7 +1669,7 @@
             </a>
         </div>
 
-        <!-- ========== GALERI VIDEO (3x2) ========== -->
+        <!-- ========== GALERI VIDEO (3x2) - Menggunakan YouTube ========== -->
         <div class="gallery-section">
             <div class="section-title">
                 <i class="fas fa-video"></i>
@@ -1744,15 +1717,15 @@
             </div>
             <div class="modal-body">
                 <table class="personal-data-table">
-                    <tr><td>Nama</td><td>: Muhammad Fridzi</td></tr>
-                    <tr><td>Tempat, Tgl Lahir</td><td>: Bogor, 01 Nopember 2012</td></tr>
-                    <tr><td>Alamat</td><td>: Kp. Kaung Gading Ps. Jum'at Rt. 02 Rw. 06, Ds. Cibitung Kulon, Kecamatan Pamijahan, Kabupaten Bogor</td></tr>
-                    <tr><td>Jenis Kelamin</td><td>: Laki-laki</td></tr>
-                    <tr><td>Telepon Ayah</td><td>: 0852-1848-3129</td></tr>
-                    <tr><td>Email</td><td>: Belum Punya</td></tr>
-                    <tr><td>Kewarganegaraan</td><td>: Indonesia</td></tr>
-                    <tr><td>Agama</td><td>: Islam</td></tr>
-                    <tr><td>Golongan Darah</td><td>: 0</td></tr>
+                     oxe<td>Nama</td><td>: Muhammad Fridzi</td> </tr>
+                    <tr><td>Tempat, Tgl Lahir</td><td>: Bogor, 01 Nopember 2012</td> </tr>
+                    <tr><td>Alamat</td><td>: Kp. Kaung Gading Ps. Jum'at Rt. 02 Rw. 06, Ds. Cibitung Kulon, Kecamatan Pamijahan, Kabupaten Bogor</td> </tr>
+                    <tr><td>Jenis Kelamin</td><td>: Laki-laki</td> </tr>
+                    <tr><td>Telepon Ayah</td><td>: 0852-1848-3129</td> </tr>
+                    <tr><td>Email</td><td>: Belum Punya</td> </tr>
+                    <tr><td>Kewarganegaraan</td><td>: Indonesia</td> </tr>
+                    <tr><td>Agama</td><td>: Islam</td> </tr>
+                    <tr><td>Golongan Darah</td><td>: 0</td> </tr>
                  </table>
             </div>
         </div>
@@ -1766,11 +1739,11 @@
             </div>
             <div class="modal-body">
                 <table class="education-table">
-                    <tr><td><strong>SDN</strong></td><td>: 0 - 0</td></tr>
-                    <tr><td><strong>SMP Negeri Pamijahan</strong></td><td>: 2024 - 2027</td></tr>
-                    <tr><td><strong>SMA</strong></td><td>: 0 - 0</td></tr>
-                    <tr><td><strong>Universitas</strong></td><td>: -</td></tr>
-                </table>
+                    <tr><td><strong>SDN</strong></td><td>: 0 - 0</td> </tr>
+                    <tr><td><strong>SMP Negeri Pamijahan</strong></td><td>: 2024 - 2027</td> </tr>
+                    <tr><td><strong>SMA</strong></td><td>: 0 - 0</td> </tr>
+                    <tr><td><strong>Universitas</strong></td><td>: -</td> </tr>
+                 </table>
             </div>
         </div>
     </div>
@@ -1920,14 +1893,14 @@
             { title: "Sawah Terasering", desc: "Keindahan hijau", src: "https://picsum.photos/id/30/600/600", hdSrc: "https://picsum.photos/id/30/1200/1200", badge: "Pedesaan" }
         ];
 
-        // Data Video dengan contentid yang berbeda untuk setiap video
+        // Data Video dengan YouTube ID (menggunakan ID yang Anda berikan: fVwG7Z_fgzU)
         const videoItems = [
-            { title: "Video 01", desc: "Fridzi 3D Animasi", contentid: "fVwG7Z_fgzU", badge: "Video" },
-            { title: "Video 02", desc: "Konten menarik 2", contentid: "7967789b2c4a5260", badge: "Video" },
-            { title: "Video 03", desc: "Konten menarik 3", contentid: "a1b2c3d4e5f67890", badge: "Video" },
-            { title: "Video 04", desc: "Konten menarik 4", contentid: "1234567890abcdef", badge: "Video" },
-            { title: "Video 05", desc: "Konten menarik 5", contentid: "fedcba0987654321", badge: "Video" },
-            { title: "Video 06", desc: "Konten menarik 6", contentid: "00c74b660d2e773f", badge: "Video" }
+            { title: "Video Fridzi", desc: "Konten spesial", videoId: "fVwG7Z_fgzU", badge: "YouTube" },
+            { title: "Video 02", desc: "Konten menarik 2", videoId: "#", badge: "YouTube" },
+            { title: "Video 03", desc: "Konten menarik 3", videoId: "#", badge: "YouTube" },
+            { title: "Video 04", desc: "Konten menarik 4", videoId: "#", badge: "YouTube" },
+            { title: "Video 05", desc: "Konten menarik 5", videoId: "#", badge: "YouTube" },
+            { title: "Video 06", desc: "Konten menarik 6", videoId: "#", badge: "YouTube" }
         ];
 
         const photoGrid = document.getElementById('photoGrid');
@@ -1986,7 +1959,7 @@
             return card;
         }
 
-        // Fungsi membuat kartu video dengan format yang diminta
+        // Fungsi membuat kartu video dengan YouTube iframe
         function createVideoCard(item) {
             const card = document.createElement('div');
             card.className = 'thumbnail-card';
@@ -1997,39 +1970,16 @@
             const videoDiv = document.createElement('div');
             videoDiv.className = 'video-thumb';
             
-            // Membuat struktur thumbnail video (sederhana untuk preview)
-            const videoContainer = document.createElement('div');
-            videoContainer.className = 'video-container';
-            videoContainer.style.width = '100%';
-            videoContainer.style.height = '100%';
-            
-            const videoBorder = document.createElement('div');
-            videoBorder.className = 'video-border';
-            videoBorder.style.width = '100%';
-            videoBorder.style.height = '100%';
-            videoBorder.style.padding = '5px';
-            videoBorder.style.border = '2px solid #ccc';
-            videoBorder.style.borderRadius = '10px';
-            videoBorder.style.backgroundColor = '#fff';
-            
-            const separator = document.createElement('div');
-            separator.className = 'separator';
-            separator.style.cssText = 'clear: both; text-align: center; width: 100%; height: 100%;';
-            
-            const objectTag = document.createElement('object');
-            objectTag.className = 'BLOG_video_class';
-            objectTag.setAttribute('contentid', item.contentid);
-            objectTag.setAttribute('height', '200');
-            objectTag.setAttribute('width', '320');
-            objectTag.setAttribute('id', `BLOG_video-${item.contentid}`);
-            objectTag.style.width = '100%';
-            objectTag.style.height = '100%';
-            objectTag.style.objectFit = 'cover';
-            
-            separator.appendChild(objectTag);
-            videoBorder.appendChild(separator);
-            videoContainer.appendChild(videoBorder);
-            videoDiv.appendChild(videoContainer);
+            // Membuat thumbnail video dengan iframe YouTube (controls=0 untuk tampilan thumbnail)
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${item.videoId}?autoplay=0&controls=0&modestbranding=1&rel=0&showinfo=0&disablekb=1`;
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.objectFit = 'cover';
+            iframe.style.pointerEvents = 'none';
+            videoDiv.appendChild(iframe);
             
             const overlay = document.createElement('div');
             overlay.className = 'play-overlay';
@@ -2048,20 +1998,22 @@
             card.appendChild(infoDiv);
             
             card.addEventListener('click', () => {
-                // Membuat tampilan modal dengan struktur lengkap sesuai permintaan
+                // Membuat tampilan modal dengan YouTube player yang bisa diputar
                 const modalContent = `
-                    <div class="modal-video-wrapper">
-                        <div class="video-container-modal">
-                            <div class="video-border-modal">
-                                <div class="separator" style="clear: both; text-align: center;">
-                                    <object class="BLOG_video_class" contentid="${item.contentid}" height="200" id="BLOG_video-${item.contentid}" width="320" style="width:100%; height:100%; object-fit:contain;"></object>
-                                </div>
-                            </div>
+                    <div class="modal-youtube-wrapper">
+                        <div class="youtube-video-container">
+                            <iframe src="https://www.youtube.com/embed/${item.videoId}?autoplay=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
                         </div>
-                        <div style="text-align: center; margin-top: 15px;">
-                            <button id="tombolTandai" class="tombol-tandai" onclick="ubahTeks()">Tandai Selesai</button>
+                        <div class="video-info">
+                            🎬 ${item.title} — ${item.desc}
                         </div>
-                        <p style="font-size: 14px; text-align: center; margin-top: 10px; color: #fff;">Video Fridzi</p>
+                        <div style="text-align: center; padding: 10px;">
+                            <button id="tombolTandai" class="tombol-tandai">Tandai Selesai</button>
+                        </div>
+                        <p class="video-footer-text">Video Fridzi</p>
                     </div>
                 `;
                 galleryModalMedia.innerHTML = modalContent;
@@ -2070,14 +2022,16 @@
                 addCloseButtonToContainer();
                 
                 // Menambahkan fungsi ubahTeks ke window agar bisa diakses dari onclick
-                window.ubahTeks = function() {
-                    const tombol = document.getElementById('tombolTandai');
-                    if (tombol && tombol.textContent === 'Tandai Selesai') {
-                        tombol.textContent = 'Tandai Sudah Selesai';
-                    } else if (tombol) {
-                        tombol.textContent = 'Tandai Selesai';
-                    }
-                };
+                const tombol = document.getElementById('tombolTandai');
+                if (tombol) {
+                    tombol.onclick = function() {
+                        if (this.textContent === 'Tandai Selesai') {
+                            this.textContent = 'Tandai Sudah Selesai';
+                        } else {
+                            this.textContent = 'Tandai Selesai';
+                        }
+                    };
+                }
             });
             
             return card;
